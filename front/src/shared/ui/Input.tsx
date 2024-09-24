@@ -5,17 +5,19 @@ import '@styles/ui/input.scss'
 function Input(
     props: {
         className: string,
+        onChange: any,
+        
         type?: string | 'text',
-        value?: string,
-        onChange?: any,
+        value?: string | '',
+
         placeholder?: string,
-        required?: boolean,
+        required?: boolean | false,
     }
 ) {
     const labelRef = React.useRef<HTMLDivElement>(null)
 
 
-    const changeFocus = (event: React.FocusEvent, isOut: boolean) => {
+    const changeFocus = (isOut: boolean) => {
         if (props.placeholder && !props.value) {
             !isOut ?
                 labelRef.current?.classList.add('moved')
@@ -26,7 +28,8 @@ function Input(
 
     return (
         <>
-            <div className={`${props.className} input-component`}>
+            <div
+                className={`${props.className} input-component`}>
                 {props.placeholder &&
                     <span className="label-form" ref={labelRef}>
                         {props.placeholder}
@@ -38,8 +41,8 @@ function Input(
                     type={props.type}
                     value={props.value}
                     onChange={event => props.onChange(event.target.value)}
-                    onFocus={event => changeFocus(event, false)}
-                    onBlur={event => changeFocus(event, true)}
+                    onFocus={event => changeFocus(false)}
+                    onBlur={event => changeFocus(true)}
                 />
             </div>
         </>

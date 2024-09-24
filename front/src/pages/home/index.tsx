@@ -1,26 +1,20 @@
 import React from 'react';
 
-import CourseForm from '@features/CourseForm/ui';
-
 import '@styles/pages/home.scss'
+import Form from '@widgets/Form';
+import Slider from '@widgets/Slider';
 
+import image from '@assets/images/image.png'
 interface HomePageProps {
     
 }
  
 const HomePage: React.FunctionComponent<HomePageProps> = () => {
     return ( 
-        <div className="page home">
-            <div className="home__content">
-                <div className="home__title">
-                    <h1 className='title'>Расписание занятий</h1>
-                </div>
-
-                <div className="home__form">
-                    <CourseForm />
-                </div>
-            </div>
-        </div>
+        <> 
+            <Slider images={[image, image, image, image]}/>
+            <Form />
+        </>
      );
 }
  

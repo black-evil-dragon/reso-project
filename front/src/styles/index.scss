@@ -14,21 +14,46 @@
     * Header
     */
     &-header {
-        display: flex;
-        justify-content: space-between;
+        // display: flex;
+        // justify-content: space-between;
         
-        padding: 1rem .75rem;
+        // padding: 1rem .75rem;
+
+        &__content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        &__item {
+            margin: 5px;
+        }
+    
+        &__logo {
+    
+            img {
+                padding: 20px;
+                height: 45px;
+            }
+        }
     }
 
     /*
     * Body
     */
     &-body {
-        .page {
-            background-color: $theme-light;
-            height: 100%;
+        // .page {
+        //     background-color: $theme-light;
+        //     height: 100%;
     
-            padding: 0 5rem;
+        //     padding: 0 5rem;
+        // }
+
+        .content-block {
+            width: 100%;
+
+            padding-right: 5rem;
+            padding-left: 5rem;
         }
     }
 
